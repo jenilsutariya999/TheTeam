@@ -1,34 +1,13 @@
-.container {
-  min-height: calc(100vh - 6rem);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.text {
-  position: relative;
-  color: #32043d;
-  font-size: 2.5rem;
-  font-weight: 600;
-}
-
-.text.first-text {
-  color: brown;
-}
-
-.text.second-text {
-  border: none;
-  padding-right: 4px;
-  border-right: 2px solid black;
-  min-height: 3rem;
-}
-
-@media screen and (min-width: 768px) {
-  .text {
-    font-size: 4rem;
-  }
-
-  .text.second-text {
-    min-height: 4rem;
-  }
+/*
+* CREDITS:
+* original code for circle placement calculations taken from this codepen:
+* https: //codepen.io/team/keyframers/pen/LYWyrqO
+*/
+.avatar {
+    --radius: 14rem;
+    --d: calc(var(--i) / var(--total));
+    --r-offset: -0.15turn;
+    --r-amount: 1turn;
+    --r: calc((var(--r-amount) * var(--d)) + var(--r-offset));
+    transform: rotate(var(--r)) translate(var(--radius)) rotate(calc(-1 * var(--r)));
 }
